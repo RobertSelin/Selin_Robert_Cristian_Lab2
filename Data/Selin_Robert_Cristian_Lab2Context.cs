@@ -19,5 +19,7 @@ namespace Selin_Robert_Cristian_Lab2.Data
         public DbSet<Selin_Robert_Cristian_Lab2.Models.Publisher> Publisher { get; set; }
 
         public DbSet<Selin_Robert_Cristian_Lab2.Models.Authors> Authors { get; set; }
+
+        public DbSet<Selin_Robert_Cristian_Lab2.Models.Category> Category { get; set; }
     }
 }

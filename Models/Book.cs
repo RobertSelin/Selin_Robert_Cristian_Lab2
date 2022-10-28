@@ -26,5 +26,6 @@ namespace Selin_Robert_Cristian_Lab2.Models
 
         public Authors? Authors { get; set; } // navigation property
 
+        public ICollection<BookCategory>? BookCategories { get; set; }
     }
 }
