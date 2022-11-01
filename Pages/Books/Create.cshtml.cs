@@ -48,17 +48,20 @@ namespace Selin_Robert_Cristian_Lab2.Pages.Books
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync(string[] selectedCategories)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            _context.Book.Add(Book);
-            await _context.SaveChangesAsync();
+            //_context.Book.Add(Book);
+            //await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            //return RedirectToPage("./Index");
 
-            var newBook = new Book();
+            //var newBook = new Book();
+
+            var newBook = Book;
+
             if (selectedCategories != null)
             {
                 newBook.BookCategories = new List<BookCategory>();
@@ -72,16 +75,20 @@ namespace Selin_Robert_Cristian_Lab2.Pages.Books
                 }
             }
 
-            if (await TryUpdateModelAsync<Book>(
-                newBook,
-                "Book",
-                i => i.Title, i => i.Authors,
-                i => i.Price, i => i.PublishingDate, i => i.PublisherId))
-            {
-                _context.Book.Add(newBook);
-                await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
-            }
+            //if (await TryUpdateModelAsync<Book>(
+            //    newBook,
+            //    "Book",
+            //    i => i.Title, i => i.Authors,
+            //    i => i.Price, i => i.PublishingDate, i => i.PublisherId))
+            //{
+            //    _context.Book.Add(newBook);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToPage("./Index");
+            //}
+
+            _context.Book.Add(newBook);
+            await _context.SaveChangesAsync();
+            return RedirectToPage("./Index");
 
             PopulateAssignedCategoryData(_context, newBook);
             return Page();
