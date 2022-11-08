@@ -30,7 +30,8 @@ namespace Selin_Robert_Cristian_Lab2.Pages.Categories
         {
             CategoryData = new CategoryIndexData();
             CategoryData.Categories = await _context.Category
-                .Include(i => i.Books)
+                .Include(i => i.BookCategories)
+                .ThenInclude(i => i.Book)
                 .ThenInclude(c => c.Authors)
                 .OrderBy(i => i.CategoryName)
                 .ToListAsync();
@@ -45,7 +46,7 @@ namespace Selin_Robert_Cristian_Lab2.Pages.Categories
                 CategoryID = id.Value;
                 Category category = CategoryData.Categories
                     .Where(i => i.ID == id.Value).Single();
-                CategoryData.Books = category.Books;
+                CategoryData.BookCategories = category.BookCategories;
             }
         }
     }

@@ -41,7 +41,7 @@
     </tbody>
 </table>
 
-@if (Model.CategoryData.Books != null)
+@if (Model.CategoryData.BookCategories != null)
 {
     <h3>Books that belong to the Selected Category</h3>
     <table class="table">
@@ -56,9 +56,9 @@
             <tr class="@selectedRow">
                 <td>
                     @{
-                        foreach (var b in item.Books)
+                        foreach (var b in item.BookCategories)
                         {
-                                @b.Title @: @b.Authors.FullName
+                                @b.Book.Title @: @b.Book.Authors.FullName
                                 <br />
                         }
                     }
