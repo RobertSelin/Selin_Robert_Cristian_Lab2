@@ -12,6 +12,7 @@ using Selin_Robert_Cristian_Lab2.Models.ViewModels;
 
 namespace Selin_Robert_Cristian_Lab2.Pages.Publishers
 {
+
     public class IndexModel : PageModel
     {
         private readonly Selin_Robert_Cristian_Lab2.Data.Selin_Robert_Cristian_Lab2Context _context;
